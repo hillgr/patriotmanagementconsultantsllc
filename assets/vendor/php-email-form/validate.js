@@ -2,8 +2,9 @@ jQuery(document).ready(function($) {
   "use strict";
 
   //Contact
-  $('form.php-email-form').submit(function() {
-   
+
+  $('form.php-email-form').submit(function(ev) {
+    ev.preventDefault();
     var f = $(this).find('.form-group'),
       ferror = false,
       emailExp = /^[^\s()<>@,;:\/]+@\w[\w\.-]+\.[a-z]{2,}$/i;
@@ -104,12 +105,13 @@ jQuery(document).ready(function($) {
     this_form.find('.sent-message').slideUp();
     this_form.find('.error-message').slideUp();
     this_form.find('.loading').slideDown();
-    
-    $.ajax({
+
+    /*$.ajax({
       type: "POST",
       url: action,
       data: str,
       success: function(msg) {
+        console.log(msg);
         if (msg == 'OK') {
           this_form.find('.loading').slideUp();
           this_form.find('.sent-message').slideDown();
@@ -119,7 +121,46 @@ jQuery(document).ready(function($) {
           this_form.find('.error-message').slideDown().html(msg);
         }
       }
-    });
+    });*/
+
+    function success() {
+      this_form.find('.loading').slideUp();
+      this_form.find('.sent-message').slideDown();
+      this_form.find("input:not(input[type=submit]), textarea").val('');
+
+      $('.form-control').focus(function() {
+        if ($('.loading').is(":visible") || $('.sent-message').is(":visible") || $('.error-message').is(":visible")) {
+          this_form.find('.loading').slideUp();
+          this_form.find('.sent-message').slideUp();
+          this_form.find('.error-message').slideUp();
+        }
+      });
+    }
+
+    function error() {
+      this_form.find('.loading').slideUp();
+      this_form.find('.error-message').slideDown().html("Oops! There was a problem.");
+    }
+
+    function ajax(method, url, data, success, error) {
+      var xhr = new XMLHttpRequest();
+      xhr.open(method, url);
+      xhr.setRequestHeader("Accept", "application/json");
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState !== XMLHttpRequest.DONE) return;
+        if (xhr.status === 200) {
+          success(xhr.response, xhr.responseType);
+        } else {
+          error(xhr.status, xhr.response, xhr.responseType);
+        }
+      };
+      xhr.send(data);
+    }
+
+    var data = new FormData(document.getElementById("contactusform"));
+    console.log(data);
+    ajax('POST', action, data, success, error);
+
     return false;
   });
 
