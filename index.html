@@ -26,67 +26,57 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: iPortfolio - v1.2.1
-  * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
-
   <style>
     .description {
       margin-top:8px;
+    }
+    .fixed-top.scrolled {
+      background-color: #173b6c !important;
+      transition: background-color 200ms linear;
+    }
+    .navbar-brand {
+      visibility:hidden;
+    }
+    .navbar-brand.scrolled {
+      visibility:visible;
+    }
+    .nav-item {
+      margin-right:30px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- ======= Mobile nav toggle button ======= -->
-  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-
   <!-- ======= Header ======= -->
   <header id="header">
-    <div class="d-flex flex-column">
-
-      <div class="profile">
-        <!--<img src="assets/img/profile-img.jpg" alt="" class="img-fluid rounded-circle">-->
-        <!--<h1 class="text-light"><a href="index.html">Alex Smith</a></h1>-->
-        <img src="assets/img/PCMC-logo.png" alt="Logo" class="img-fluid" style="border:none;width:100%;background:white;padding:10px;">
-        <!--<div class="social-links mt-3 text-center">
-          <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
-          <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
-          <a href="#" class="instagram"><i class="bx bxl-instagram"></i></a>
-          <a href="#" class="google-plus"><i class="bx bxl-skype"></i></a>
-          <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-        </div>-->
-      </div>
-
-      <nav class="nav-menu">
-        <ul>
-          <li class="active"><a href="#hero"><i class="bx bx-home"></i> <span>Home</span></a></li>
-          <li><a href="#about"><i class="bx bx-user"></i> <span>What We Do</span></a></li>
-          <li><a href="#resume"><i class="bx bx-file-blank"></i> <span>Services</span></a></li>
-          <li><a href="#contact"><i class="bx bx-envelope"></i> Contact</a></li>
-
-        </ul>
-      </nav><!-- .nav-menu -->
-      <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
-
+  <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+    <a class="navbar-brand" href="#hero" style="background:white;padding-left:5px;padding-right:5px;">
+      <img src="assets/img/PCMC-logo-small.png" alt="Logo" class="img-fluid" style="border:none;width:110px;">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse nav-menu" id="navbarCollapse">
+      <div class="mobile-margin d-lg-up" style="margin-left:-110px;">&nbsp;</div>
+      <ul class="navbar-nav ml-auto mr-auto text-center">
+        <!--<li class="nav-item active">
+          <a class="nav-link active" href="#hero">Home <span class="sr-only">(current)</span></a>
+        </li>-->
+        <li class="nav-item"><a href="#hero" class="nav-link"><i class="bx bx-home"></i> <span>Home</span></a></li>
+        <li class="nav-item"><a href="#about" class="nav-link"><i class="bx bx-user"></i> <span>What We Do</span></a></li>
+        <li class="nav-item"><a href="#resume" class="nav-link"><i class="bx bx-file-blank"></i> <span>Services</span></a></li>
+        <li class="nav-item"><a href="#contact" class="nav-link"><i class="bx bx-envelope"></i> Contact Us</a></li>
+      </ul>
     </div>
-  </header><!-- End Header -->
+  </nav>
+</header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="layer"></div>
-    <div class="hero-container d-none d-xl-block" data-aos="fade-in" style="padding-left:15%;text-align:center;">
-      <img src="assets/img/PCMC-logo.png" alt="Logo" class="img-fluid" style="border:none;width:70%;z-index:99;">
-      <!--<p>Always on-<span class="typed" data-typed-items="schedule, budget, point, top"></span></p>-->
-      <h4 style="color:white;margin-top:25px;">DETAILED PERSONAL ATTENTION​</h4>
-    </div>
-    <div class="hero-container d-xs-block d-xl-none" data-aos="fade-in" style="text-align:center;">
-      <img src="assets/img/PCMC-logo.png" alt="Logo" class="img-fluid" style="border:none;width:70%;z-index:99;">
+    <div class="hero-container" data-aos="fade-in" style="text-align:center;">
+      <img src="assets/img/PCMC-logo-dark.png" alt="Logo" class="img-fluid" style="border:none;width:70%;z-index:99;">
       <!--<p>Always on-<span class="typed" data-typed-items="schedule, budget, point, top"></span></p>-->
       <h4 style="color:white;margin-top:25px;">DETAILED PERSONAL ATTENTION​</h4>
     </div>
@@ -99,7 +89,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>What we do</h2>
+          <h2 style="margin-top:20px;">What we do</h2>
         </div>
 
         <div class="row">
@@ -126,6 +116,7 @@
             </ul>
             Scope could range from:​
             <p>A few advisory / coordination meetings​ to provide full time, on site, Owner’s Field Representative​</p>
+            <br><br><br><br><br>
           </div>
         </div>
 
@@ -137,7 +128,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Services</h2>
+          <h2 style="margin-top:20px;">Services</h2>
         </div>
 
         <div class="row">
@@ -219,7 +210,7 @@
       <div class="container">
 
         <div class="section-title">
-          <h2>Contact</h2>
+          <h2 style="margin-top:20px;">Contact Us</h2>
         </div>
 
         <div class="row" data-aos="fade-in">
@@ -281,6 +272,13 @@
       </div>
     </section><!-- End Contact Section -->
 
+    <!-- ======= Extra Section ======= -->
+    <section id="contact" class="extra">
+      <div class="container">
+        <br><br><br><br>
+      </div>
+    </section>
+
   </main><!-- End #main -->
 
   <!-- ======= Footer ======= -->
@@ -309,7 +307,16 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <script>
+  $(function () {
+    $(document).scroll(function () {
+      var $nav = $(".fixed-top");
+      var $hero = $(".navbar-brand");
+      $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+      $hero.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
+    });
+  });
+  </script>
 </body>
 
 </html>
